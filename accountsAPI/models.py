@@ -26,7 +26,7 @@ class account(models.Model):
     account_updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.account_name
+        return self.account_user.user_profile_user.username
 
 
 class transaction(models.Model):
