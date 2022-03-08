@@ -25,7 +25,7 @@ class userProfile(models.Model):
 
 def create_user_profile(sender, **kwargs):
     if kwargs["created"]:
-        new_user_profile = userProfile.objects.create(user=kwargs["instance"])
+        new_user_profile = userProfile.objects.create(user_profile_user=kwargs["instance"])
 
 
 #listen for when a new user has been created, if so execute the create_user_profile function
