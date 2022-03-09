@@ -45,7 +45,7 @@ python manage.py runserver
 
 #### 1. Create User Enpoint
 
-To create a new user, you can use the django defualt url or append the following to the app url
+To create a new user, you can use the django defualt url or append the following to the app url:
 
 ```
 /user/createUser
@@ -76,7 +76,7 @@ Once the account is created successfully, you can then log in using the username
 
 #### 2. Create Account Enpoint
 
-To create/open a new bank account, append the following to the app url
+To create/open a new bank account, append the following to the app url:
 
 ```
 /account/createAccount
@@ -111,7 +111,7 @@ Credit account json data:
 
 #### 3. Create/Make Deposit Enpoint
 
-To make a deposit, append the following to the app url
+To make a deposit, append the following to the app url:
 
 ```
 /account/makeDeposit
@@ -130,7 +130,7 @@ Below is an example of the required json object to make a deposit. To make a dep
 
 #### 4. Create/Make Withdrawal Enpoint
 
-To make a withdrawal, append the following to the app url
+To make a withdrawal, append the following to the app url:
 
 ```
 /account/makeWithdrawal
@@ -149,5 +149,9 @@ Below is an example of the required json object to make a withdrawal. To make a 
 
 #### 5. Get User Account Details Enpoint
 
+To get accounts, balances, and the last 10 transactions, for the logged in USER., append the following to the app url:
 
+```
+/account/userAccountDetails
+```
 
