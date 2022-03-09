@@ -4,6 +4,7 @@ from .models import account, accountType, transaction
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
+from .serializers import accountSerializer, transactionSerializer
 
 # Create your views here.
 @api_view(['POST'])
@@ -104,7 +105,16 @@ def createAccount(request):
     
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
-def getUserDetails(request):
+def getUserAccountDetails(request):
     user = request.user
 
-    return Response({"username": user.username, "email": user.email,"user_id": user.id})
+    # get the user's saccounts 
+    get_user_accounts = account.objects.filter(account_user__user_profile_user=user)
+    serialsed_accouns = accountSerializer(get_user_accounts, many=True)
+
+    # get the last 10 transactions for the user
+    get_user_transactions = transaction.objects.filter(transaction_account__account_user__user_profile_user=user).order_by('-transaction_created_at')[:10]
+    serialized_transactions = transactionSerializer(get_user_transactions, many=True)
+
+
+    return Response({"user_accounts":serialsed_accouns.data,"user_transactions":serialized_transactions.data})
