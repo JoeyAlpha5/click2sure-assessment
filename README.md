@@ -8,7 +8,7 @@ Use the sections listed below to get started with running the application on you
 - [Setting up the app](#setting-up-the-app)
 - [Third party libraries and packages use](#third-party-libraries)
 - [API endpoints](#api-endpoints)
-- [Application Preview](#application-preview)
+- [Application preview](#application-preview)
 - [Future improvements](#future-improvement)
 
 
@@ -154,4 +154,58 @@ To get accounts, balances, and the last 10 transactions, for the logged in USER.
 ```
 /account/userAccountDetails
 ```
+
+
+
+### Application Preview
+
+The app has been deployed on Heroku and can be previewed [here](https://click-2-sure.herokuapp.com/).
+
+To login in to the django admin site use the following credentials:
+
+```
+username: joey
+password: 12345678
+```
+
+
+### Future Improvements
+
+The current application is far from perfect and it is still missing a few features that have been outlined in the project brief. I approached this project by breaking down the requirements listed in the project brief and grouping them into high priority and low priority tasks.
+
+Implementing the CRUD functionality using the django-rest-framework was high priority. 
+
+The following features/functionality have been left out, but I've detailed how I would go about implementing them:
+
+#### 1. CSV export
+
+The Django documentation provides a guideline on how to go about implementing this feature [here](https://docs.djangoproject.com/en/4.0/howto/outputting-csv/). This would have been my starting point, additionally I would have explored other python libararies.
+
+#### 2. Documenting the API
+
+The Django Rest Framework documentation provides steps on how to go about documenting your API using Swagger [here](https://www.django-rest-framework.org/topics/documenting-your-api/). Going through the DRF and Swagger documentation would be my starting point in documenting the API.
+
+
+#### 3. Seeding my database
+
+To populate my db with dummy data, I would use the [django-seed](https://pypi.org/project/django-seed/) library.
+
+
+### 4. Test cases
+
+For the sake of time I've not written any test cases for this project. I would use the python unittest module along with the steps outline [here](https://docs.djangoproject.com/en/4.0/topics/testing/overview/) to write my test cases.
+
+
+#### 5. Interacting with the API using curl commands
+
+This would have been a new and exciting challenge and is definitely something I'll be looking into. The [curl website](https://curl.se/) would be my starting point to familiarise myself with curl commands and django 
+
+
+#### Other API improvements
+
+The API enpoints could do with a little more validation. I've only implmented the validation requirements specified in the project brief such as minimun amounts required for specific account types.
+
+Securing the API endpoint would also be of great benefit, currently some of the enpoints do not require the user to be authenticated. For a *'real world'* application with a frontend and a backend, using a method like token based authentication would add an addittional layer of security.
+
+
 
