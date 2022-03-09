@@ -29,7 +29,7 @@ This section lists all the third party libraries and dependencies that have been
 git clone https://github.com/JoeyAlpha5/click2sure-assessment.git
 ```
 
-2. Once the repo has been cloned, in your terminal cd into the project folder and run the command below to install all the required packages and libraries
+2. Once the repo has been cloned, in your terminal cd into the project folder, make sure you're working in the development branch and run the command below to install all the required packages and libraries
 
 ```
 pip install -r requirements.txt
