@@ -48,7 +48,7 @@ python manage.py runserver
 To create a new user, you can use the django defualt url or append the following to the app url
 
 ```
-/createAccount
+/user/createUser
 ```
 
 Below is an example of the required json object to create a new user. The default django User model has been extened with the userProfile model found in [userAPI](https://github.com/JoeyAlpha5/click2sure-assessment/blob/development/userAPI/models.py). When a new user is created a profile for that user containing additional fields such as phone number, address, gender, etc will be created for that user. This has been done in order to illustrate the kind of data a  *'real world'* application would be collecting from users, especially a banking app. The app is far from perfect, additional data that could also be collected would include ID numbers.
@@ -56,23 +56,58 @@ Below is an example of the required json object to create a new user. The defaul
 ```
 {
     "user":{
-        "username":"jalome",
-        "password":"#JoeyAlpha5"
+        "username":"Jane",
+        "password":"Jane#123"
     },
     "user_profile":{
-        "phone":"0630547090",
+        "phone":"123456789",
         "address":"14 blo",
         "country":"ZA",
         "city":"JHB",
         "state":"GA",
-        "zipcode":"1619",
-        "gender":"Male"
+        "zipcode":"2000",
+        "gender":"Female"
     }
 }
 ```
 
+Once the account is created successfully, you can then log in using the username and password you used to create the account.
+
 
 #### 2. Create Account Enpoint
+
+To create/open a new bank account, append the following to the app url
+
+```
+/account/createAccount
+```
+
+Below is an example of the required json object to create a new bank account. To view the list of the users in the database and retrieve user_ids, you can download [DB Browser for SQLite](https://sqlitebrowser.org/).
+
+There are currently two account types, Savings (account_type_id:1) and Credit (account_type_id:2).
+
+The minimum ammount required to open a savings account is R 50.00, passing an amount less than this will return the following error message: *'Savings account cannot have a balance of less than R 50.00'*
+
+The maximum credit limit on a credit account is (R 20 000.00). passing an amount less than this will return the following error message: *'Credit account cannot have a balance of less than R-20000.00'*
+
+Savings account json data:
+
+```
+{
+    "user_id":12,
+    "opening_balance":50,
+    "account_type_id":1
+}
+```
+
+Credit account json data:
+```
+{
+    "user_id":12,
+    "opening_balance":-10000,
+    "account_type_id":2
+}
+```
 
 #### 3. Create/Make Deposit Enpoint
 

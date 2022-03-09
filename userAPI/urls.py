@@ -3,6 +3,6 @@ from .views import createUser
 
 urlpatterns = [
     path('', createUser),
-    path('createAccount', createUser),
+    path('createUser', createUser),
 ]
 

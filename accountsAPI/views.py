@@ -86,7 +86,7 @@ def createAccount(request):
     # savings account cannot have a balance of less than 50 
     # credit account cannot have a limit of more than 20000
     if opening_balance < get_account_type_minimum_balance:
-        return Response({"message": "{} account cannot have a balance of less than {}".format(get_account_type_name, get_account_type_minimum_balance)})
+        return Response({"message": "{} account cannot have a balance of less than R{}".format(get_account_type_name, get_account_type_minimum_balance)})
 
     # create account
     get_user = userProfile.objects.get(user_profile_user__id=user_id)
