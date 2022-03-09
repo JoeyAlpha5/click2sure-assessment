@@ -1,12 +1,12 @@
 # Click2Sure-assessment
 
-This documentation provides a breakdown of the Click2Sure API backend banking application.  The application currently consists of 5 API endpoints. Some of the requirements from the project brief have been left out due time constraints, but I've highlighted these in the Future improvements section which goes over how one would go about implementing them.
+This documentation provides a breakdown of the Click2Sure API backend banking application.  The application currently consists of 5 API endpoints. Some of the requirements from the project brief have been left out due to time constraints, but I've highlighted these in the Future improvements section which goes over how I would go about implementing them.
 
 Use the sections listed below to get started with running the application on your machine. 
 
 ## Documentation sections
 - [Setting up the app](#setting-up-the-app)
-- [Third party libraries and packages use](#third-party-libraries)
+- [Third party libraries and packages used](#third-party-libraries)
 - [API endpoints](#api-endpoints)
 - [Application preview](#application-preview)
 - [Future improvements](#future-improvement)
@@ -15,11 +15,11 @@ Use the sections listed below to get started with running the application on you
 
 ### Third party libraries
 
-This section lists all the third party libraries, dependencies that have been used and the reasons for including them.
+This section lists all the third party libraries and dependencies that have been used and the reasons for including them.
 
-1. [Django Rest Framework](https://www.django-rest-framework.org/). The django rest framework simplifies the process of building RestFul APIs and given the time constraint using it helped speed up the process of building the blog APIs.
+1. [Django Rest Framework](https://www.django-rest-framework.org/). The django rest framework simplifies the process of building RestFul APIs, using it helped speed up the process of building the APIs.
 
-3. [Whitenoise](https://pypi.org/project/whitenoise/). Whitenoise has been added to serve static files when loading the app.
+3. [Whitenoise](https://pypi.org/project/whitenoise/). Whitenoise has been added to serve static files when loading the app on Heroku.
 
 
 ### Setting up the app
@@ -45,7 +45,7 @@ python manage.py runserver
 
 #### 1. Create User Enpoint
 
-To create a new user, you can use the django defualt url or append the following to the app url:
+To create a new user, you can use the django default url or append the following to the app url:
 
 ```
 /user/createUser
@@ -198,7 +198,7 @@ For the sake of time I've not written any test cases for this project. I would u
 
 #### 5. Interacting with the API using curl commands
 
-This would have been a new and exciting challenge and is definitely something I'll be looking into. The [curl website](https://curl.se/) would be my starting point to familiarise myself with curl commands and django 
+This would have been a new and exciting challenge and is definitely something I'll be looking into. The [curl website](https://curl.se/) would be my starting point to familiarise myself with curl commands.
 
 
 #### Other API improvements
