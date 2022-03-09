@@ -88,7 +88,7 @@ There are currently two account types, Savings (account_type_id:1) and Credit (a
 
 The minimum ammount required to open a savings account is R 50.00, passing an amount less than this will return the following error message: *'Savings account cannot have a balance of less than R 50.00'*
 
-The maximum credit limit on a credit account is (R 20 000.00). passing an amount less than this will return the following error message: *'Credit account cannot have a balance of less than R-20000.00'*
+The maximum credit limit on a credit account is (R 20 000.00), passing an amount less than this will return the following error message: *'Credit account cannot have a balance of less than R-20000.00'*
 
 Savings account json data:
 
@@ -111,8 +111,41 @@ Credit account json data:
 
 #### 3. Create/Make Deposit Enpoint
 
+To make a deposit, append the following to the app url
+
+```
+/account/makeDeposit
+```
+
+Below is an example of the required json object to make a deposit. To make a deposit, the user has to be signed in. To view the list of the accounts in the database and retrieve account_ids, you can download [DB Browser for SQLite](https://sqlitebrowser.org/).
+
+```
+{
+    "account_id":1,
+    "deposit_amount":500,
+    "transaction_description":"Deposited 500 bucks"
+}
+```
+
+
 #### 4. Create/Make Withdrawal Enpoint
 
+To make a withdrawal, append the following to the app url
+
+```
+/account/makeWithdrawal
+```
+
+Below is an example of the required json object to make a withdrawal. To make a withdrawal, the user has to be signed in. To view the list of the accounts in the database and retrieve account_ids, you can download [DB Browser for SQLite](https://sqlitebrowser.org/).
+
+
+```
+{
+    "account_id":2,
+    "withdrawal_amount":10000,
+    "transaction_description":"Withdrawing money from credit account"
+}
+```
 
 #### 5. Get User Account Details Enpoint
 
